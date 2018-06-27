@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELHeaderResponseDecorator",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"header"
+	],
+	"name" : "ELAddHeader",
+	"type" : "normal"
+}

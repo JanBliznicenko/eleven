@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ELRequestHandler",
+	"category" : "Eleven-Handlers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"handler",
+		"newSessionBlock"
+	],
+	"name" : "ELApplication",
+	"type" : "normal"
+}

@@ -1,0 +1,1 @@
+ELEmbeddedHtml outputs a portion of *unchecked* and *unescaped* HTML code to the response. To be used only for 100% trusted strings, otherwise there is a risk of introducing a severe vulnerability. Use at your own risk!

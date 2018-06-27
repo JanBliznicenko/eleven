@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELComponent",
+	"category" : "Eleven-Rendering-Decorations",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"innerComponent"
+	],
+	"name" : "ELDecoration",
+	"type" : "normal"
+}

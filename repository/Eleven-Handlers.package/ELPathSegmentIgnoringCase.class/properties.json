@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELPathSegment",
+	"category" : "Eleven-Handlers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELPathSegmentIgnoringCase",
+	"type" : "normal"
+}

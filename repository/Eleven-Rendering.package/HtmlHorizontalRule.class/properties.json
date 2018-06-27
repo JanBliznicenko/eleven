@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELEmptyHtmlTag",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HtmlHorizontalRule",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELRequestHandler",
+	"category" : "Eleven-Handlers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"decoratedHandler"
+	],
+	"name" : "ELHandlerDecorator",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+accessing
+statusMessage
+	^ 'Temporary Redirect'

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELContainerHtmlTag",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HtmlCanvas",
+	"type" : "normal"
+}

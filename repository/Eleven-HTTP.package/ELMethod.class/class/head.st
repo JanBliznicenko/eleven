@@ -1,0 +1,3 @@
+accessing
+head
+	^ ELHeadMethod instance

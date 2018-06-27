@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELStringMatcher",
+	"category" : "Eleven-Handlers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELCaseInsensitiveStringMatcher",
+	"type" : "normal"
+}

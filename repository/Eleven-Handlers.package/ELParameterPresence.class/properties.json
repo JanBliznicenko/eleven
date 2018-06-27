@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELHandlerDecorator",
+	"category" : "Eleven-Handlers",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"parameter"
+	],
+	"name" : "ELParameterPresence",
+	"type" : "normal"
+}

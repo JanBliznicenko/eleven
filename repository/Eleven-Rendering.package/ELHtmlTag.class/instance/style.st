@@ -1,0 +1,3 @@
+attributes
+style
+	^ self buildStyleAttribute

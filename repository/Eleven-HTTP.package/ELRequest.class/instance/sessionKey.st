@@ -1,0 +1,3 @@
+private
+sessionKey
+	^ #elevenSession

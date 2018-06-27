@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELCallback",
+	"category" : "Eleven-Handlers-Callbacks",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELOneShotCallback",
+	"type" : "normal"
+}

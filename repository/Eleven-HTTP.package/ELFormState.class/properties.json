@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"fields",
+		"errors"
+	],
+	"name" : "ELFormState",
+	"type" : "normal"
+}

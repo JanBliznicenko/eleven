@@ -1,0 +1,3 @@
+visiting
+visitParameterPresence: aParameterPresence
+	^ self visitParameterValue: aParameterPresence

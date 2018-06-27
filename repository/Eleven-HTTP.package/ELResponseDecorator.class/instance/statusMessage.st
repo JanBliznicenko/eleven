@@ -1,0 +1,3 @@
+accessing
+statusMessage
+	^ decoratedResponse statusMessage

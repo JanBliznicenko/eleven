@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELResponse",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELNoResponse",
+	"type" : "normal"
+}

@@ -1,0 +1,3 @@
+constants
+reponseHeaderName
+	^ #'Set-Cookie'

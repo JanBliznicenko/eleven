@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELElement",
+	"category" : "Eleven-Rendering-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELComponent",
+	"type" : "normal"
+}

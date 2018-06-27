@@ -1,0 +1,3 @@
+named instances
+internalServerError
+	^ ELInternalServerErrorResponse new

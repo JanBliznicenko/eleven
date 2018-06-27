@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "HtmlHeading",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HtmlHeadingLevel4",
+	"type" : "normal"
+}

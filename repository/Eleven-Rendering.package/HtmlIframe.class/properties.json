@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELEmptyHtmlTag",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"securityRules"
+	],
+	"name" : "HtmlIframe",
+	"type" : "normal"
+}

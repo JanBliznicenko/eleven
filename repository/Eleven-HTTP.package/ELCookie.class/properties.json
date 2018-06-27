@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"value",
+		"expiration",
+		"domain",
+		"path",
+		"httpOnly",
+		"secure"
+	],
+	"name" : "ELCookie",
+	"type" : "normal"
+}

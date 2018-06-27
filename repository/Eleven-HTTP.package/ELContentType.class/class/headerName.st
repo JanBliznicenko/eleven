@@ -1,0 +1,3 @@
+constants
+headerName
+	^ 'Content-Type'

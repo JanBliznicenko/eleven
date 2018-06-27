@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Eleven-Server-Zinc-Eleven-Server-Zinc",
+	"classinstvars" : [
+		"defaultIsDebugMode"
+	],
+	"pools" : [ ],
+	"classvars" : [
+		"Default"
+	],
+	"instvars" : [
+		"zincServer",
+		"portNumber",
+		"applicationHandler",
+		"isDebugMode"
+	],
+	"name" : "ELZincServer",
+	"type" : "normal"
+}

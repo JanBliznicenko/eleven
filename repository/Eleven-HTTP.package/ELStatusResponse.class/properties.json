@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELResponseDecorator",
+	"category" : "Eleven-HTTP-StatusCodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELStatusResponse",
+	"type" : "normal"
+}

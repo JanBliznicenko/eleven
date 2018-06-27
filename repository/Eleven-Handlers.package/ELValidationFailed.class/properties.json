@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Exception",
+	"category" : "Eleven-Handlers-Forms",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"key"
+	],
+	"name" : "ELValidationFailed",
+	"type" : "normal"
+}

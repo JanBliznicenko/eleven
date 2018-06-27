@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "ELElement",
+	"category" : "Eleven-Rendering-HTML",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"attributes",
+		"events",
+		"classNames",
+		"styles"
+	],
+	"name" : "ELHtmlTag",
+	"type" : "normal"
+}

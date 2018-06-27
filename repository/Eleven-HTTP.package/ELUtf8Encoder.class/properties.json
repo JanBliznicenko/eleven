@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELStreamWrapper",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"encoder"
+	],
+	"name" : "ELUtf8Encoder",
+	"type" : "normal"
+}

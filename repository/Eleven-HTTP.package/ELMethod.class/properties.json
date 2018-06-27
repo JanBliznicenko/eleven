@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Eleven-HTTP-Methods",
+	"classinstvars" : [
+		"instance"
+	],
+	"pools" : [ ],
+	"classvars" : [
+		"MethodsByName"
+	],
+	"instvars" : [ ],
+	"name" : "ELMethod",
+	"type" : "normal"
+}

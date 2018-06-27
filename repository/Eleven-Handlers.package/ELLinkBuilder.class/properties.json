@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ELHandlerVisitor",
+	"category" : "Eleven-Handlers-Linking",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"pathSegments",
+		"parameters"
+	],
+	"name" : "ELLinkBuilder",
+	"type" : "normal"
+}

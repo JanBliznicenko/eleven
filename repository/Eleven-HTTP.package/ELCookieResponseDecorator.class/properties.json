@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ELResponseDecorator",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"cookie"
+	],
+	"name" : "ELCookieResponseDecorator",
+	"type" : "normal"
+}

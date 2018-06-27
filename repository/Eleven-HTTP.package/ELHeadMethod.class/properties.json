@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELMethod",
+	"category" : "Eleven-HTTP-Methods",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELHeadMethod",
+	"type" : "normal"
+}

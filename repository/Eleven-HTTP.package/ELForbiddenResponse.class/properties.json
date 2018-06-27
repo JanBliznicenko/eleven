@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ELStatusResponse",
+	"category" : "Eleven-HTTP-StatusCodes",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELForbiddenResponse",
+	"type" : "normal"
+}

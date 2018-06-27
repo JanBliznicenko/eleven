@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "HtmlButton",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HtmlSubmitButton",
+	"type" : "normal"
+}

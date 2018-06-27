@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ELHeaderResponseDecorator",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"headerName",
+		"headerNameLowercase"
+	],
+	"name" : "ELRemoveHeader",
+	"type" : "normal"
+}

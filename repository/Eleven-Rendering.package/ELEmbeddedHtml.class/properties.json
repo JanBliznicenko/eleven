@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "mib 6/13/2016 22:04",
+	"super" : "ELElement",
+	"category" : "Eleven-Rendering-HTML",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"verbatimHtml"
+	],
+	"name" : "ELEmbeddedHtml",
+	"type" : "normal"
+}

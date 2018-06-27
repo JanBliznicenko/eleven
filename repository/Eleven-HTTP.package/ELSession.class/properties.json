@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"attributes",
+		"callbacks",
+		"csrfTokens",
+		"callbackSemaphore"
+	],
+	"name" : "ELSession",
+	"type" : "normal"
+}

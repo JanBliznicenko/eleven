@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "HtmlInput",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"type"
+	],
+	"name" : "HtmlGenericInput",
+	"type" : "normal"
+}

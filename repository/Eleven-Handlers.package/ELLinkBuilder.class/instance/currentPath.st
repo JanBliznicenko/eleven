@@ -1,0 +1,3 @@
+private
+currentPath
+	^ '/' , (pathSegments joinUsing: $/)

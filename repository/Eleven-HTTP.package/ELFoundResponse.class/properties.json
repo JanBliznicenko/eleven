@@ -1,0 +1,13 @@
+{
+	"classtraitcomposition" : "ELTRedirectResponse classTrait",
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ELFoundResponse",
+	"commentStamp" : "",
+	"super" : "ELStatusResponse",
+	"traitcomposition" : "ELTRedirectResponse",
+	"type" : "normal",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"category" : "Eleven-HTTP-StatusCodes"
+}

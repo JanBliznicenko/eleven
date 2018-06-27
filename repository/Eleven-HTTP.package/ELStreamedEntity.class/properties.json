@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "ELResponseDecorator",
+	"category" : "Eleven-HTTP-Messages",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"stream",
+		"size"
+	],
+	"name" : "ELStreamedEntity",
+	"type" : "normal"
+}

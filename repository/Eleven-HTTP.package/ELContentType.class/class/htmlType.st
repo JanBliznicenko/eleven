@@ -1,0 +1,3 @@
+types
+htmlType
+	^ 'text/html'

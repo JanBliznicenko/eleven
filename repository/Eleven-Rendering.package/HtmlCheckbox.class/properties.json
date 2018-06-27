@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "HtmlBooleanChoiceInput",
+	"category" : "Eleven-Rendering-HTML-Tags",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "HtmlCheckbox",
+	"type" : "normal"
+}
