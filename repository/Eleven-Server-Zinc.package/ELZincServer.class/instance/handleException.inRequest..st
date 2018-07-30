@@ -9,8 +9,4 @@ handleException: anException inRequest: aZnRequest
 				ifTrue: [ ex debug ]
 				ifFalse: [ Smalltalk logError: ex messageText inContext: ex signalerContext ].
 			^ self
-				internalServerErrorResponse:
-					(ELStreamedEntity
-						string:
-							'Technická chyba - Kontaktujte nás na našem portálu pro kontakt a podporu a opište nebo zkopírujte následující text chyby: '
-								, ex messageText) ]
+				internalServerErrorResponse: (ELStreamedEntity string: self technicalErrorText , ' ' , ex messageText) ]

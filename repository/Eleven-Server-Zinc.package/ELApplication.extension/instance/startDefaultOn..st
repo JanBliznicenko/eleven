@@ -1,3 +1,3 @@
 *Eleven-Server-Zinc
 startDefaultOn: portNumber
-	^ ELZincServer startDefaultOn: portNumber with: self
+	^ self defaultServerClass startDefaultOn: portNumber with: self
