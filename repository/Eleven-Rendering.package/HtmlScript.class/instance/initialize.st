@@ -1,5 +1,5 @@
 initialization
 initialize
 	super initialize.
-	
-	self type: self class javaScriptType
+	self type: self class javaScriptType.
+	content := ''

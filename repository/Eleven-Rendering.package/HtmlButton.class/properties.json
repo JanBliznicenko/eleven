@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "HtmlInput",
+	"super" : "ELContainerHtmlTag",
 	"category" : "Eleven-Rendering-HTML-Tags",
 	"classinstvars" : [ ],
 	"pools" : [ ],

@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "ELContainerHtmlTag",
+	"super" : "HtmlInputButton",
 	"category" : "Eleven-Rendering-HTML-Tags",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "HtmlExtendedButton",
+	"name" : "HtmlInputSubmitButton",
 	"type" : "normal"
 }
