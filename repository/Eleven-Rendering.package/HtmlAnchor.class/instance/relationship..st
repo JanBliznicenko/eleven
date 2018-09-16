@@ -1,4 +1,3 @@
 attributes
 relationship: aString
-	^ self
-		attributeAt: #rel
+	^ self attributeAt: #rel put: aString

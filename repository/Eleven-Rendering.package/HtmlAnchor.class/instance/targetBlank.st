@@ -1,5 +1,3 @@
 attributes
 targetBlank
-	^ self
-		attributeAt: #target
-		put: '_blank'
+	^ self target: #_blank
