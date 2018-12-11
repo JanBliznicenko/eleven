@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "Eleven-Server-Zinc-Eleven-Server-Zinc",
+	"category" : "Eleven-Server-Zinc",
 	"classinstvars" : [
 		"defaultIsDebugMode"
 	],
