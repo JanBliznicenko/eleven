@@ -1,3 +1,0 @@
-accessing
-statusMessage
-	^ 'See Other'

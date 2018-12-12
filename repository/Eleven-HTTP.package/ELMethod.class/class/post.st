@@ -1,3 +1,0 @@
-accessing
-post
-	^ ELPostMethod instance

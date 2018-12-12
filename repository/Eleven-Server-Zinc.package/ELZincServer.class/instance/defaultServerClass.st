@@ -1,3 +1,0 @@
-constants
-defaultServerClass
-	^ ZnManagingMultiThreadedServer

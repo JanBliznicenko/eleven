@@ -1,3 +1,0 @@
-types
-htmlType
-	^ 'text/html'

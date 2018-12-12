@@ -1,3 +1,0 @@
-accessing
-statusCode
-	^ decoratedResponse statusCode

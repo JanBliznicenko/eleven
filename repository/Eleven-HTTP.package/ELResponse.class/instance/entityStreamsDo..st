@@ -1,3 +1,0 @@
-accessing
-entityStreamsDo: aBlock
-	self subclassResponsibility

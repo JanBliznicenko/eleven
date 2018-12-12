@@ -1,3 +1,0 @@
-converting
-asRemovalResponseHeader
-	^ self asRemovalCookie asResponseHeader

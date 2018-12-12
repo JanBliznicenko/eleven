@@ -1,3 +1,0 @@
-accessing
-innerComponent
-	^ innerComponent

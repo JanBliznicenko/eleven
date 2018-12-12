@@ -1,3 +1,0 @@
-named instances
-serviceUnavailable
-	^ ELServiceUnavailableResponse new

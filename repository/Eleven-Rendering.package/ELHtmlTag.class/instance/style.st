@@ -1,3 +1,0 @@
-attributes
-style
-	^ self buildStyleAttribute

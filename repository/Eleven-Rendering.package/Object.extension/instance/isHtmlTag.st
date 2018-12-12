@@ -1,3 +1,0 @@
-*Eleven-Rendering
-isHtmlTag
-	^ false

@@ -1,3 +1,0 @@
-constants
-headerName
-	^ 'Content-Type'

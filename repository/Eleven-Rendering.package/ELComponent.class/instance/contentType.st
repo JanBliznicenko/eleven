@@ -1,3 +1,0 @@
-constants
-contentType
-	^ ELContentType htmlWithDefaultCharset

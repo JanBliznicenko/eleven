@@ -1,3 +1,0 @@
-constants
-reponseHeaderName
-	^ #'Set-Cookie'

@@ -1,3 +1,0 @@
-accessing
-newSession
-	^ newSessionBlock value

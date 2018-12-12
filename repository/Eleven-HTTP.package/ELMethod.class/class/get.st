@@ -1,3 +1,0 @@
-accessing
-get
-	^ ELGetMethod instance

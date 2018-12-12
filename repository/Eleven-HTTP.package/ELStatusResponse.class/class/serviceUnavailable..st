@@ -1,3 +1,0 @@
-named instances
-serviceUnavailable: decoratedResponse
-	^ ELServiceUnavailableResponse with: decoratedResponse

@@ -1,3 +1,0 @@
-accessing
-put
-	^ ELPutMethod instance

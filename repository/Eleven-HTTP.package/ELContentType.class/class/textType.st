@@ -1,3 +1,0 @@
-types
-textType
-	^ 'text/plain'

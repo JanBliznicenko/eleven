@@ -1,3 +1,0 @@
-private
-sessionKey
-	^ #elevenSession

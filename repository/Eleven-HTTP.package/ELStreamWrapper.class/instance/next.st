@@ -1,3 +1,0 @@
-reading
-next
-	self subclassResponsibility

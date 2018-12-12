@@ -1,3 +1,0 @@
-constants
-callbackParameter
-	^ ELCallback parameterName

@@ -1,3 +1,0 @@
-callbacks
-urlForCallbackNamed: key
-	self subclassResponsibility
