@@ -1,7 +1,9 @@
 Class {
 	#name : #HtmlButton,
 	#superclass : #ELContainerHtmlTag,
-	#category : 'Eleven-Rendering-HTML-Tags'
+	#traits : 'ELTFormItemTag',
+	#classTraits : 'ELTFormItemTag classTrait',
+	#category : #'Eleven-Rendering-HTML-Tags'
 }
 
 { #category : #attributes }

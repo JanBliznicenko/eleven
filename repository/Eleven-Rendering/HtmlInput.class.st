@@ -1,7 +1,9 @@
 Class {
 	#name : #HtmlInput,
 	#superclass : #ELEmptyHtmlTag,
-	#category : 'Eleven-Rendering-HTML-Tags'
+	#traits : 'ELTFormItemTag',
+	#classTraits : 'ELTFormItemTag classTrait',
+	#category : #'Eleven-Rendering-HTML-Tags'
 }
 
 { #category : #'instance creation' }
