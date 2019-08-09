@@ -16,8 +16,8 @@ ELAddHeader class >> header: aHeader with: decoratedResponse [
 { #category : #'instance creation' }
 ELAddHeader class >> headerName: nameString value: valueString with: decoratedResponse [
 	^ self
-			header: (ELHeader name: nameString value: valueString)
-			with: decoratedResponse
+		header: (ELHeader name: nameString value: valueString)
+		with: decoratedResponse
 ]
 
 { #category : #private }

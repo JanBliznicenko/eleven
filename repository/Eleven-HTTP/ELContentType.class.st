@@ -109,7 +109,7 @@ ELContentType class >> value: aString [
 
 { #category : #'instance creation' }
 ELContentType class >> value: aString withCharset: charsetString [
-	^ self value: aString , '; charset=' , charsetString
+	^ self value: aString , ';charset=' , charsetString
 ]
 
 { #category : #'instance creation' }

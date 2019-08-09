@@ -26,5 +26,5 @@ ELResponse >> headersAsZnHeaders [
 { #category : #'*Eleven-Server-Zinc' }
 ELResponse >> znContentType [
 	^ ZnMimeType commonMimeTypes
-		detect: [ :any | self contentType value = (any main , '/' , any sub) ]
+		detect: [ :any | self contentType beginsWith: any main , '/' , any sub ]
 ]

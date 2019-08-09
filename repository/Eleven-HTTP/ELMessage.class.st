@@ -19,7 +19,7 @@ ELMessage >> headerAt: aString ifAbsent: aBlock [
 	self
 		headersDo: [ :header | 
 			header name = aString
-				ifTrue: [ ^ header value ] ].
+				ifTrue: [ ^ header valueWithAttributes ] ].
 	^ aBlock value
 ]
 

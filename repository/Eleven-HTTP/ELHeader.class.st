@@ -118,7 +118,7 @@ ELHeader >> valueWithAttributes [
 { #category : #printing }
 ELHeader >> writeAttributesTo: aStream [
 	attributes associationsDo: [ :association |
-		aStream nextPutAll: '; '.
+		aStream nextPutAll: ';'.
 		association printAsHeaderAttributeOn: aStream ]
 ]
 
