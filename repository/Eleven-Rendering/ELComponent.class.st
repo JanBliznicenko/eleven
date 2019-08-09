@@ -6,8 +6,7 @@ Class {
 
 { #category : #converting }
 ELComponent >> asResponseFor: request [
-	^ (super asResponseFor: request)
-			withContentType: self contentType
+	^ (super asResponseFor: request) withContentType: self contentType
 ]
 
 { #category : #rendering }

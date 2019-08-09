@@ -68,6 +68,11 @@ ELContentType class >> multipartForm [
 ]
 
 { #category : #'named values' }
+ELContentType class >> pdf [
+	^ self value: 'application/pdf'
+]
+
+{ #category : #'named values' }
 ELContentType class >> text [
 	^ self value: self textType
 ]

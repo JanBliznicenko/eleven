@@ -26,7 +26,9 @@ ELResponse >> asResponseFor: request [
 
 { #category : #accessing }
 ELResponse >> contentType [
-	^ self headerAt: ELContentType headerName ifAbsent: [ self class defaultContentType value ]
+	^ self
+		headerAt: ELContentType headerName
+		ifAbsent: [ self class defaultContentType value ]
 ]
 
 { #category : #accessing }

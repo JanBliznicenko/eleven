@@ -18,7 +18,7 @@ ELMessage >> headerAt: aString [
 ELMessage >> headerAt: aString ifAbsent: aBlock [
 	self
 		headersDo: [ :header | 
-			header name asLowercase = aString
+			header name = aString
 				ifTrue: [ ^ header value ] ].
 	^ aBlock value
 ]
