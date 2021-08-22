@@ -13,7 +13,7 @@ Class {
 	#classInstVars : [
 		'defaultIsDebugMode'
 	],
-	#category : 'Eleven-Server-Zinc'
+	#category : #'Eleven-Server-Zinc'
 }
 
 { #category : #'default server' }
@@ -78,7 +78,7 @@ ELZincServer >> defaultPortNumber [
 
 { #category : #constants }
 ELZincServer >> defaultServerClass [
-	^ ZnManagingMultiThreadedServer
+	^ ELManagingMultiThreadedServer
 ]
 
 { #category : #'request handling' }

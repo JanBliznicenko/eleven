@@ -11,11 +11,11 @@ ELApplication class >> startDefaultOn: portNumber [
 ]
 
 { #category : #'*Eleven-Server-Zinc' }
-ELApplication class >> startOn: portNumber [
-	^ self new startOn: portNumber
+ELApplication >> startOn: portNumber [
+	^ self defaultServerClass startOn: portNumber with: self
 ]
 
 { #category : #'*Eleven-Server-Zinc' }
-ELApplication >> startOn: portNumber [
-	^ self defaultServerClass startOn: portNumber with: self
+ELApplication class >> startOn: portNumber [
+	^ self new startOn: portNumber
 ]
