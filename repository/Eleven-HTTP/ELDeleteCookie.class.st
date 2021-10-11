@@ -11,7 +11,7 @@ ELDeleteCookie >> headersDo: aBlock [
 ]
 
 { #category : #printing }
-ELDeleteCookie >> printOn: aStream. [
+ELDeleteCookie >> printOn: aStream [.
 	super printOn: aStream.
 	
 	aStream

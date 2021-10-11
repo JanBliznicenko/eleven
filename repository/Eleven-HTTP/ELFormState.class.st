@@ -5,7 +5,7 @@ Class {
 		'fields',
 		'errors'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : #'Eleven-HTTP-Messages'
 }
 
 { #category : #'instance creation' }
@@ -376,6 +376,13 @@ ELFormState >> integerOrNilAt: key index: indexInteger [
 ]
 
 { #category : #'accessing fields' }
+ELFormState >> integersAt: key [
+
+	^ (self at: key ifAbsent: Array new) collect: [ :each | 
+		  each asInteger ]
+]
+
+{ #category : #'accessing fields' }
 ELFormState >> radiobuttonBooleanOrFalseAt: key [
 	^ self radiobuttonBooleanValues at: (self stringAt: key) ifPresent: [ :value | value = true ] ifAbsent: [ false ]
 ]
@@ -421,6 +428,13 @@ ELFormState >> stringAt: key [
 { #category : #'accessing fields' }
 ELFormState >> stringAt: key index: indexInteger [
 	^ ((self at: key index: indexInteger ifAbsent: [ '' ]) ifNil: [ '' ]) asString trimmed
+]
+
+{ #category : #'accessing fields' }
+ELFormState >> stringsAt: key [
+
+	^ (self at: key ifAbsent: Array new) collect: [ :each | 
+		  each asString ]
 ]
 
 { #category : #'accessing fields' }

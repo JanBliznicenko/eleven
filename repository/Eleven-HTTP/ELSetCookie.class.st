@@ -11,7 +11,7 @@ ELSetCookie >> headersDo: aBlock [
 ]
 
 { #category : #printing }
-ELSetCookie >> printOn: aStream. [
+ELSetCookie >> printOn: aStream [.
 	super printOn: aStream.
 	
 	aStream nextPut: $(.
