@@ -15,7 +15,7 @@ Class {
 		'fileUploads',
 		'originalRequest'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : #'Eleven-HTTP-Messages'
 }
 
 { #category : #accessing }
@@ -144,7 +144,9 @@ ELRequest >> formState: anObject [
 
 { #category : #'accessing - path' }
 ELRequest >> hasPathSegments [
-	^ remainingPathSegments notEmpty and: [ remainingPathSegments first ~~ #/ ]
+
+	^ remainingPathSegments notEmpty and: [
+		  remainingPathSegments first ~~ $/ ]
 ]
 
 { #category : #private }
