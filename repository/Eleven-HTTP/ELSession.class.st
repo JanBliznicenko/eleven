@@ -7,7 +7,7 @@ Class {
 		'csrfTokens',
 		'callbackSemaphore'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : #'Eleven-HTTP-Messages'
 }
 
 { #category : #accessing }
@@ -77,6 +77,20 @@ ELSession >> initialize [
 	csrfTokens := Dictionary new
 ]
 
+{ #category : #'CSRF tokens' }
+ELSession >> isValidCsrfToken: aString [
+	^ self isValidCsrfToken: aString for: self
+]
+
+{ #category : #'CSRF tokens' }
+ELSession >> isValidCsrfToken: aString for: anObject [
+
+	[ self validateCsrfToken: aString for: anObject ]
+		on: ELCsrfInvalid
+		do: [ ^ false ].
+	^ true
+]
+
 { #category : #accessing }
 ELSession >> registerCallback: aCallback [
 	| key |
@@ -97,18 +111,29 @@ ELSession >> removeCallbackAt: key [
 ]
 
 { #category : #'CSRF tokens' }
-ELSession >> validateCsrfToken: aString [
-	^ self validateCsrfToken: aString for: self
-]
-
-{ #category : #'CSRF tokens' }
 ELSession >> validateCsrfToken: aString for: anObject [
+
 	| validity |
-	(aString endsWith: anObject identityHash asBase64String)
-		ifFalse: [ ^ false ].
-	validity := csrfTokens at: aString ifAbsent: [ ^ false ].
-	validity >= DateAndTime now
-		ifFalse: [ csrfTokens removeKey: aString.
-			^ false ].
-	^ true
+	(aString endsWith: anObject identityHash asBase64String) ifFalse: [
+		^ ELCsrfInvalid
+			  signalReason:
+				  'The string does not end with hash of the object - should be '
+				  , anObject identityHash asBase64String
+			  string: aString
+			  object: anObject ].
+	validity := csrfTokens at: aString ifAbsent: [
+		            ^ ELCsrfInvalid
+			              signalReason:
+				              'Token not found for the string. Dictionary of validities of tokens: '
+				              , csrfTokens asString
+			              string: aString
+			              object: anObject ].
+	validity >= DateAndTime now ifFalse: [
+		csrfTokens removeKey: aString.
+		^ ELCsrfInvalid
+			  signalReason:
+				  'Token is no longer valid. Valid until: ' , validity , ', now: '
+				  , DateAndTime now
+			  string: aString
+			  object: anObject ]
 ]

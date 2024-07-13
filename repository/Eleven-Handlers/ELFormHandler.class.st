@@ -1,7 +1,7 @@
 Class {
 	#name : #ELFormHandler,
 	#superclass : #ELHandlerDecorator,
-	#category : 'Eleven-Handlers-Forms'
+	#category : #'Eleven-Handlers-Forms'
 }
 
 { #category : #constants }
@@ -91,7 +91,7 @@ ELFormHandler >> subsequentStateFrom: formState for: request [
 { #category : #'request handling' }
 ELFormHandler >> validateCsrfTokenFrom: request at: key [
 	^ self handledForms anySatisfy: [ :each |
-			request session validateCsrfToken: (request formState stringAt: key) for: each ]
+			request session isValidCsrfToken: (request formState stringAt: key) for: each ]
 ]
 
 { #category : #validating }
