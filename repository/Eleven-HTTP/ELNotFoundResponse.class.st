@@ -1,15 +1,17 @@
 Class {
-	#name : #ELNotFoundResponse,
-	#superclass : #ELStatusResponse,
-	#category : 'Eleven-HTTP-StatusCodes'
+	#name : 'ELNotFoundResponse',
+	#superclass : 'ELStatusResponse',
+	#category : 'Eleven-HTTP-StatusCodes',
+	#package : 'Eleven-HTTP',
+	#tag : 'StatusCodes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELNotFoundResponse >> statusCode [
 	^ 404
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELNotFoundResponse >> statusMessage [
 	^ 'Not Found'
 ]

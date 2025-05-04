@@ -1,10 +1,12 @@
 Class {
-	#name : #ELGetMethod,
-	#superclass : #ELMethod,
-	#category : 'Eleven-HTTP-Methods'
+	#name : 'ELGetMethod',
+	#superclass : 'ELMethod',
+	#category : 'Eleven-HTTP-Methods',
+	#package : 'Eleven-HTTP',
+	#tag : 'Methods'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELGetMethod >> name [
 	^ #GET
 ]

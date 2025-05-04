@@ -1,6 +1,6 @@
-Extension { #name : #ZnResponse }
+Extension { #name : 'ZnResponse' }
 
-{ #category : #'*Eleven-HTTP' }
+{ #category : '*Eleven-HTTP' }
 ZnResponse >> asZnResponse [
 	^ self
 ]

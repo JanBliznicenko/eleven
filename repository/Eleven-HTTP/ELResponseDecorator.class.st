@@ -1,45 +1,47 @@
 Class {
-	#name : #ELResponseDecorator,
-	#superclass : #ELResponse,
+	#name : 'ELResponseDecorator',
+	#superclass : 'ELResponse',
 	#instVars : [
 		'decoratedResponse'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELResponseDecorator class >> new [
 	^ self with: ELResponse empty
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELResponseDecorator class >> with: decoratedResponse [
 	^ self basicNew
 			initialize;
 			decoratedResponse: decoratedResponse
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELResponseDecorator >> decoratedResponse: aResponse [
 	decoratedResponse := aResponse
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponseDecorator >> entityStreamsDo: aBlock [
 	decoratedResponse entityStreamsDo: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponseDecorator >> headersDo: aBlock [
 	decoratedResponse headersDo: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponseDecorator >> statusCode [
 	^ decoratedResponse statusCode
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponseDecorator >> statusMessage [
 	^ decoratedResponse statusMessage
 ]

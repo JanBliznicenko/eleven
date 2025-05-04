@@ -1,15 +1,17 @@
 Class {
-	#name : #ELHeader,
-	#superclass : #Object,
+	#name : 'ELHeader',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'value',
 		'attributes'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 ELHeader class >> attributeAssociationFrom: aString [
 	| equalSignPosition |
 	equalSignPosition := aString indexOf: $= ifAbsent: [ ^ aString trimmed -> true ].
@@ -18,7 +20,7 @@ ELHeader class >> attributeAssociationFrom: aString [
 			-> (self unquote: (aString allButFirst: equalSignPosition) trimmed)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELHeader class >> name: nameString value: valueString [
 	((valueString includes: $;)
 		and: [ nameString asLowercase ~= 'cookie' and: [ nameString asLowercase ~= 'user-agent' ] ])
@@ -26,13 +28,13 @@ ELHeader class >> name: nameString value: valueString [
 	^ self name: nameString trimmed value: valueString trimmed attributes: Dictionary new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELHeader class >> name: nameString value: valueString attributes: aDictionary [
 	^ self new
 			name: nameString value: valueString attributes: aDictionary
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELHeader class >> name: nameString valueWithAttributes: valueString [
 	| parts |
 	
@@ -47,51 +49,51 @@ ELHeader class >> name: nameString valueWithAttributes: valueString [
 						asDictionary
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELHeader class >> unquote: aString [
 	^ aString first = $"
 			ifTrue: [ aString allButFirst allButLast ]
 			ifFalse: [ aString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> attributeAt: key [
 	^ attributes at: key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> attributeAt: key ifAbsent: aBlock [
 	^ attributes at: key ifAbsent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> attributeAt: key ifPresent: aBlock [
 	^ attributes at: key ifPresent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> attributeAt: key ifPresent: presentBlock ifAbsent: absentBlock [
 	^ attributes at: key ifPresent: presentBlock ifAbsent: absentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> attributes [
 	^ attributes
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> name [
 	^ name
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELHeader >> name: nameString value: valueString attributes: aDictionary [
 	name := nameString asSymbol.
 	value := valueString.
 	attributes := aDictionary
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELHeader >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -100,12 +102,12 @@ ELHeader >> printOn: aStream [
 	aStream nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> value [
 	^ value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHeader >> valueWithAttributes [
 	^ attributes
 			ifEmpty: [ value ]
@@ -115,14 +117,14 @@ ELHeader >> valueWithAttributes [
 					self writeAttributesTo: attrStream ] ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELHeader >> writeAttributesTo: aStream [
 	attributes associationsDo: [ :association |
 		aStream nextPutAll: ';'.
 		association printAsHeaderAttributeOn: aStream ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELHeader >> writeTo: aStream [
 	aStream
 		nextPutAll: name;
@@ -132,7 +134,7 @@ ELHeader >> writeTo: aStream [
 	self writeAttributesTo: aStream
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELHeader >> writeWithCrlfTo: aStream [
 	self writeTo: aStream.
 	aStream nextPutAll: String crlf

@@ -1,16 +1,18 @@
 Class {
-	#name : #ELDeleteCookie,
-	#superclass : #ELCookieResponseDecorator,
-	#category : 'Eleven-HTTP-Messages'
+	#name : 'ELDeleteCookie',
+	#superclass : 'ELCookieResponseDecorator',
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELDeleteCookie >> headersDo: aBlock [
 	super headersDo: aBlock.
 	aBlock value: cookie asRemovalResponseHeader
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELDeleteCookie >> printOn: aStream [.
 	super printOn: aStream.
 	

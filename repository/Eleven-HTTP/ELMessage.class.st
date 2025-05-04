@@ -1,20 +1,22 @@
 Class {
-	#name : #ELMessage,
-	#superclass : #Object,
-	#category : 'Eleven-HTTP-Messages'
+	#name : 'ELMessage',
+	#superclass : 'Object',
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMessage >> contentType [
 	^ self headerAt: ELContentType headerName
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMessage >> headerAt: aString [
 	^ self headerAt: aString ifAbsent: [ nil ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMessage >> headerAt: aString ifAbsent: aBlock [
 	self
 		headersDo: [ :header | 
@@ -23,7 +25,7 @@ ELMessage >> headerAt: aString ifAbsent: aBlock [
 	^ aBlock value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMessage >> headersDo: aBlock [
 	self subclassResponsibility
 ]

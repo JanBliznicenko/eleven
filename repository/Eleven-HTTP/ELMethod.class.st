@@ -1,31 +1,33 @@
 Class {
-	#name : #ELMethod,
-	#superclass : #Object,
+	#name : 'ELMethod',
+	#superclass : 'Object',
 	#classVars : [
 		'MethodsByName'
 	],
 	#classInstVars : [
 		'instance'
 	],
-	#category : 'Eleven-HTTP-Methods'
+	#category : 'Eleven-HTTP-Methods',
+	#package : 'Eleven-HTTP',
+	#tag : 'Methods'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> delete [
 	^ ELDeleteMethod instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> get [
 	^ ELGetMethod instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> head [
 	^ ELHeadMethod instance
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ELMethod class >> initializeInstances [
 	MethodsByName :=
 		({ELDeleteMethod. ELGetMethod. ELHeadMethod. ELPatchMethod. ELPostMethod. ELPutMethod}
@@ -33,45 +35,45 @@ ELMethod class >> initializeInstances [
 				asDictionary
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELMethod class >> instance [
 	^ instance ifNil: [ instance := self basicNew initialize ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> named: aString [
 	MethodsByName ifNil: [ self initializeInstances ].
 	
 	^ MethodsByName at: aString
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELMethod class >> new [
 	"Do not create new objects, reuse existing ones instead."
 	^ self instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> patch [
 	^ ELPatchMethod instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> post [
 	^ ELPostMethod instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod class >> put [
 	^ ELPutMethod instance
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELMethod >> name [
 	self subclassResponsibility
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELMethod >> printOn: aStream [
 	super printOn: aStream.
 	

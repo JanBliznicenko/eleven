@@ -1,6 +1,6 @@
 Class {
-	#name : #ELCookie,
-	#superclass : #Object,
+	#name : 'ELCookie',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'value',
@@ -10,10 +10,12 @@ Class {
 		'httpOnly',
 		'secure'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELCookie class >> fromHeader: aHeader [
 	^ Array
 		streamContents: [ :cookieStream | 
@@ -27,7 +29,7 @@ ELCookie class >> fromHeader: aHeader [
 							[ cookieStream nextPut: (self name: (pair first: separatorPosition - 1) trimmed value: (pair allButFirst: separatorPosition) trimmed) ] ] ]
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELCookie class >> name: nameString value: value [
 	^ self new
 		name: nameString;
@@ -35,17 +37,17 @@ ELCookie class >> name: nameString value: value [
 		yourself
 ]
 
-{ #category : #constants }
+{ #category : 'constants' }
 ELCookie class >> reponseHeaderName [
 	^ #'Set-Cookie'
 ]
 
-{ #category : #constants }
+{ #category : 'constants' }
 ELCookie class >> requestHeaderName [
 	^ #Cookie
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ELCookie >> asRemovalCookie [
 	^ self class new
 			name: name
@@ -55,12 +57,12 @@ ELCookie >> asRemovalCookie [
 			path: path
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ELCookie >> asRemovalResponseHeader [
 	^ self asRemovalCookie asResponseHeader
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ELCookie >> asResponseHeader [
 	^ ELHeader
 			name: self class reponseHeaderName
@@ -75,57 +77,57 @@ ELCookie >> asResponseHeader [
 				} asDictionary
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> domain [
 	^ domain
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> domain: anObject [
 	domain := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> expiration [
 	^ expiration
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> expiration: anObject [
 	expiration := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> httpOnly [
 	^ httpOnly
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> httpOnly: anObject [
 	httpOnly := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> name [
 	^ name
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> name: anObject [
 	name := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> path [
 	^ path
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> path: anObject [
 	path := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELCookie >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -134,27 +136,27 @@ ELCookie >> printOn: aStream [
 	aStream nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> secure [
 	^ secure
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> secure: anObject [
 	secure := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> value [
 	^ value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCookie >> value: anObject [
 	value := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELCookie >> writeTo: aStream [
 	aStream
 		nextPutAll: name;

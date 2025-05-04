@@ -1,10 +1,12 @@
 Class {
-	#name : #ELPostMethod,
-	#superclass : #ELMethod,
-	#category : 'Eleven-HTTP-Methods'
+	#name : 'ELPostMethod',
+	#superclass : 'ELMethod',
+	#category : 'Eleven-HTTP-Methods',
+	#package : 'Eleven-HTTP',
+	#tag : 'Methods'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELPostMethod >> name [
 	^ #POST
 ]

@@ -1,90 +1,92 @@
 Class {
-	#name : #ELStatusResponse,
-	#superclass : #ELResponseDecorator,
-	#category : 'Eleven-HTTP-StatusCodes'
+	#name : 'ELStatusResponse',
+	#superclass : 'ELResponseDecorator',
+	#category : 'Eleven-HTTP-StatusCodes',
+	#package : 'Eleven-HTTP',
+	#tag : 'StatusCodes'
 }
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> badRequest [
 	^ ELBadRequestResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> forbidden [
 	^ ELForbiddenResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> forbidden: decoratedResponse [
 	^ ELForbiddenResponse with: decoratedResponse
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> found: aUrl [
 	^ ELFoundResponse url: aUrl
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> internalServerError [
 	^ ELInternalServerErrorResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> methodNotAllowed [
 	^ ELMethodNotAllowedResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> movedPermanently: aUrl [
 	^ ELMovedPermanentlyResponse url: aUrl
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> movedTemporarily: aUrl [
 	^ ELTemporaryRedirectResponse url: aUrl
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> notFound [
 	^ ELNotFoundResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> notFound: decoratedResponse [
 	^ ELNotFoundResponse with: decoratedResponse
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> ok: decoratedResponse [
 	^ ELOkResponse with: decoratedResponse
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> seeOther: aUrl [
 	^ ELSeeOtherResponse url: aUrl
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> serviceUnavailable [
 	^ ELServiceUnavailableResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> serviceUnavailable: decoratedResponse [
 	^ ELServiceUnavailableResponse with: decoratedResponse
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> unauthorized [
 	^ ELUnauthorizedResponse new
 ]
 
-{ #category : #'named instances' }
+{ #category : 'named instances' }
 ELStatusResponse class >> unauthorized: decoratedResponse [
 	^ ELUnauthorizedResponse with: decoratedResponse
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELStatusResponse >> entityStreamsDo: aBlock [
 	super entityStreamsDo: [ :each |
 		aBlock value: each.
@@ -96,7 +98,7 @@ ELStatusResponse >> entityStreamsDo: aBlock [
 			aBlock value: (ELStreamedEntity string: self statusMessage) ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELStatusResponse >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -108,12 +110,12 @@ ELStatusResponse >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELStatusResponse >> statusCode [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELStatusResponse >> statusMessage [
 	self subclassResponsibility
 ]

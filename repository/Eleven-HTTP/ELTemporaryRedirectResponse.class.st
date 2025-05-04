@@ -1,17 +1,19 @@
 Class {
-	#name : #ELTemporaryRedirectResponse,
-	#superclass : #ELStatusResponse,
+	#name : 'ELTemporaryRedirectResponse',
+	#superclass : 'ELStatusResponse',
 	#traits : 'ELTRedirectResponse',
 	#classTraits : 'ELTRedirectResponse classTrait',
-	#category : 'Eleven-HTTP-StatusCodes'
+	#category : 'Eleven-HTTP-StatusCodes',
+	#package : 'Eleven-HTTP',
+	#tag : 'StatusCodes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELTemporaryRedirectResponse >> statusCode [
 	^ 307
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELTemporaryRedirectResponse >> statusMessage [
 	^ 'Temporary Redirect'
 ]

@@ -1,16 +1,18 @@
 Class {
-	#name : #ELSetCookie,
-	#superclass : #ELCookieResponseDecorator,
-	#category : 'Eleven-HTTP-Messages'
+	#name : 'ELSetCookie',
+	#superclass : 'ELCookieResponseDecorator',
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSetCookie >> headersDo: aBlock [
 	super headersDo: aBlock.
 	aBlock value: cookie asResponseHeader
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELSetCookie >> printOn: aStream [.
 	super printOn: aStream.
 	

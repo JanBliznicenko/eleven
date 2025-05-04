@@ -1,6 +1,6 @@
 Class {
-	#name : #ELFileUpload,
-	#superclass : #Object,
+	#name : 'ELFileUpload',
+	#superclass : 'Object',
 	#instVars : [
 		'name',
 		'filename',
@@ -8,10 +8,12 @@ Class {
 		'stream',
 		'length'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELFileUpload class >> fromZnMimePart: aZnMimePart [
 	^ self new
 			name: aZnMimePart fieldName;
@@ -21,42 +23,42 @@ ELFileUpload class >> fromZnMimePart: aZnMimePart [
 			stream: aZnMimePart entity readStream
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> fileExtension [
 	^ self filename asFileReference extension
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> filename [
 	^ filename
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFileUpload >> filename: anObject [
 	filename := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> length [
 	^ length
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFileUpload >> length: anObject [
 	length := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> name [
 	^ name
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFileUpload >> name: anObject [
 	name := anObject
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELFileUpload >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -70,7 +72,7 @@ ELFileUpload >> printOn: aStream [
 		nextPutAll: ' B)'
 ]
 
-{ #category : #actions }
+{ #category : 'actions' }
 ELFileUpload >> saveTo: aStream [
 	self stream binary.
 	
@@ -78,22 +80,22 @@ ELFileUpload >> saveTo: aStream [
 		doWhileFalse: [ self stream atEnd ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> stream [
 	^ stream
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFileUpload >> stream: anObject [
 	stream := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELFileUpload >> type [
 	^ type
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFileUpload >> type: anObject [
 	type := anObject
 ]

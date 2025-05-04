@@ -1,74 +1,76 @@
 Class {
-	#name : #ELSession,
-	#superclass : #Object,
+	#name : 'ELSession',
+	#superclass : 'Object',
 	#instVars : [
 		'attributes',
 		'callbacks',
 		'csrfTokens',
 		'callbackSemaphore'
 	],
-	#category : #'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> attributeAt: key [
 	^ attributes at: key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> attributeAt: key ifAbsent: aBlock [
 	^ attributes at: key ifAbsent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> attributeAt: key ifAbsentPut: aBlock [
 	^ attributes at: key ifAbsentPut: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> attributeAt: key ifPresent: aBlock [
 	^ attributes at: key ifPresent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> attributeAt: key ifPresent: presentBlock ifAbsent: absentBlock [
 	^ attributes at: key ifPresent: presentBlock ifAbsent: absentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> callbackAt: key [
 	^ callbacks at: key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> callbackAt: key ifAbsent: aBlock [
 	^ callbacks at: key ifAbsent: aBlock
 ]
 
-{ #category : #'private - atomicity' }
+{ #category : 'private - atomicity' }
 ELSession >> callbackSemaphore [
 	^ callbackSemaphore ifNil: [
 			callbackSemaphore := Semaphore forMutualExclusion ]
 ]
 
-{ #category : #'CSRF tokens' }
+{ #category : 'CSRF tokens' }
 ELSession >> createCsrfTokenFor: anObject [
 	^ self createCsrfTokenFor: anObject valid: 12 hours
 ]
 
-{ #category : #'CSRF tokens' }
+{ #category : 'CSRF tokens' }
 ELSession >> createCsrfTokenFor: anObject valid: aDuration [
 	"This method is not atomic, theoretically two same tokens might be generated at the same time but the probability is very low."
 
 	| token |
-	[ token := UUID new asBase64String
+	[ token := (SharedRandom base64StringOfSize: 22)
 		, anObject identityHash asBase64String ]
 		doWhileTrue: [ csrfTokens includesKey: token ].
 	csrfTokens at: token put: DateAndTime now + aDuration.
 	^ token
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ELSession >> initialize [
 	super initialize.
 	
@@ -77,12 +79,12 @@ ELSession >> initialize [
 	csrfTokens := Dictionary new
 ]
 
-{ #category : #'CSRF tokens' }
+{ #category : 'CSRF tokens' }
 ELSession >> isValidCsrfToken: aString [
 	^ self isValidCsrfToken: aString for: self
 ]
 
-{ #category : #'CSRF tokens' }
+{ #category : 'CSRF tokens' }
 ELSession >> isValidCsrfToken: aString for: anObject [
 
 	[ self validateCsrfToken: aString for: anObject ]
@@ -91,7 +93,7 @@ ELSession >> isValidCsrfToken: aString for: anObject [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> registerCallback: aCallback [
 	| key |
 	
@@ -105,12 +107,12 @@ ELSession >> registerCallback: aCallback [
 	^ key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSession >> removeCallbackAt: key [
 	^ callbacks removeKey: key ifAbsent: []
 ]
 
-{ #category : #'CSRF tokens' }
+{ #category : 'CSRF tokens' }
 ELSession >> validateCsrfToken: aString for: anObject [
 
 	| validity |

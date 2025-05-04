@@ -1,15 +1,17 @@
 Class {
-	#name : #ELNoContentResponse,
-	#superclass : #ELStatusResponse,
-	#category : 'Eleven-HTTP-StatusCodes'
+	#name : 'ELNoContentResponse',
+	#superclass : 'ELStatusResponse',
+	#category : 'Eleven-HTTP-StatusCodes',
+	#package : 'Eleven-HTTP',
+	#tag : 'StatusCodes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELNoContentResponse >> statusCode [
 	^ 204
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELNoContentResponse >> statusMessage [
 	^ 'No Content'
 ]

@@ -1,49 +1,51 @@
 Class {
-	#name : #ELResponse,
-	#superclass : #ELMessage,
-	#category : 'Eleven-HTTP-Messages'
+	#name : 'ELResponse',
+	#superclass : 'ELMessage',
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #constants }
+{ #category : 'constants' }
 ELResponse class >> defaultContentType [
 	^ ELContentType htmlWithDefaultCharset
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELResponse class >> empty [
 	^ self none
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELResponse class >> none [
 	^ ELNoResponse new
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ELResponse >> asResponseFor: request [
 	^ self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponse >> contentType [
 	^ self
 		headerAt: ELContentType headerName
 		ifAbsent: [ self class defaultContentType value ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponse >> entityStream [
 	self entityStreamsDo: [ :entityStream | ^ entityStream ].
 	
 	^ nil
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponse >> entityStreamsDo: aBlock [
 	self subclassResponsibility
 ]
 
-{ #category : #decorating }
+{ #category : 'decorating' }
 ELResponse >> replacedHeader: aHeader [
 	^ ELAddHeader
 			header: aHeader
@@ -53,32 +55,32 @@ ELResponse >> replacedHeader: aHeader [
 					with: self)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponse >> statusCode [
 	self subclassResponsibility
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELResponse >> statusMessage [
 	self subclassResponsibility
 ]
 
-{ #category : #decorating }
+{ #category : 'decorating' }
 ELResponse >> withContentType: aContentType [
 	^ self withHeader: aContentType asHeader
 ]
 
-{ #category : #decorating }
+{ #category : 'decorating' }
 ELResponse >> withCookie: aCookie [
 	^ ELSetCookie cookie: aCookie with: self
 ]
 
-{ #category : #decorating }
+{ #category : 'decorating' }
 ELResponse >> withHeader: aHeader [
 	^ ELAddHeader header: aHeader with: self
 ]
 
-{ #category : #decorating }
+{ #category : 'decorating' }
 ELResponse >> withoutHeader: headerName [
 	^ ELRemoveHeader name: headerName with: self
 ]

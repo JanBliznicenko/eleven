@@ -1,35 +1,37 @@
 Class {
-	#name : #ELEntity,
-	#superclass : #ELResponseDecorator,
+	#name : 'ELEntity',
+	#superclass : 'ELResponseDecorator',
 	#instVars : [
 		'stream',
 		'size'
 	],
-	#category : #'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELEntity class >> stream: aStream [
 	^ self
 			stream: aStream
 			size: aStream size
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELEntity class >> stream: aStream size: anInteger [
 	^ self new
 			stream: aStream;
 			size: anInteger
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELEntity class >> stream: aStream size: anInteger with: decoratedResponse [
 	^ (self with: decoratedResponse)
 			stream: aStream;
 			size: anInteger
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELEntity class >> stream: aStream with: decoratedResponse [
 	^ self
 			stream: aStream
@@ -37,12 +39,12 @@ ELEntity class >> stream: aStream with: decoratedResponse [
 			with: decoratedResponse
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELEntity >> entityStreamsDo: aBlock [
 	aBlock value: self
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELEntity >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -53,17 +55,17 @@ ELEntity >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELEntity >> size [
 	^ size
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELEntity >> size: anInteger [
 	size := anInteger
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELEntity >> stream: aStream [
 	stream := aStream
 ]

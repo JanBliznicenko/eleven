@@ -1,6 +1,6 @@
-Extension { #name : #Association }
+Extension { #name : 'Association' }
 
-{ #category : #'*Eleven-HTTP' }
+{ #category : '*Eleven-HTTP' }
 Association >> printAsHeaderAttributeOn: aStream [
 	(#(false nil) includes: self value)
 		ifTrue: [ ^ self ].

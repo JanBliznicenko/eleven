@@ -1,25 +1,27 @@
 Class {
-	#name : #ELUtf8Encoder,
-	#superclass : #ELStreamWrapper,
+	#name : 'ELUtf8Encoder',
+	#superclass : 'ELStreamWrapper',
 	#instVars : [
 		'encoder'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ELUtf8Encoder >> initialize [
 	super initialize.
 	
 	encoder := ZnUTF8Encoder new
 ]
 
-{ #category : #reading }
+{ #category : 'reading' }
 ELUtf8Encoder >> next [
 	^ encoder nextFromStream: stream
 ]
 
-{ #category : #writing }
+{ #category : 'writing' }
 ELUtf8Encoder >> nextPut: aCharacter [
 	^ encoder nextPut: aCharacter toStream: stream
 ]

@@ -1,6 +1,6 @@
-Extension { #name : #String }
+Extension { #name : 'String' }
 
-{ #category : #'*Eleven-HTTP' }
+{ #category : '*Eleven-HTTP' }
 String >> asResponseFor: request [
 	^ (ELOkResponse with:
 			(ELStreamedEntity string: self))

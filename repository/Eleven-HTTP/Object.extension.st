@@ -1,12 +1,12 @@
-Extension { #name : #Object }
+Extension { #name : 'Object' }
 
-{ #category : #'*Eleven-HTTP' }
+{ #category : '*Eleven-HTTP' }
 Object >> asResponseFor: request [
 	^ ELOkResponse with:
 			(self asStreamedEntityFor: request)
 ]
 
-{ #category : #'*Eleven-HTTP' }
+{ #category : '*Eleven-HTTP' }
 Object >> asStreamedEntityFor: request [
 	| entityStream utf8Stream |
 	

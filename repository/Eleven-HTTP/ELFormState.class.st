@@ -1,32 +1,34 @@
 Class {
-	#name : #ELFormState,
-	#superclass : #Object,
+	#name : 'ELFormState',
+	#superclass : 'Object',
 	#instVars : [
 		'fields',
 		'errors'
 	],
-	#category : #'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELFormState class >> basicFrom: aDictionary [
 	^ self new
 			fields: aDictionary
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELFormState class >> from: aDictionary [
 	^ self basicFrom: (self normalize: aDictionary)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELFormState class >> fromState: aFormState [
 	^ self new
 			fields: aFormState fields copy;
 			errors: aFormState errors copy
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFormState class >> normalize: aDictionary [
 	"
 	1) Remove trailing '[]' from collections of multiple fields (which were converted to a collection by ZnMultiValueDictionary):
@@ -75,12 +77,12 @@ ELFormState class >> normalize: aDictionary [
 	^ normalized
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key [
 	^ fields at: key
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key collect: aBlock [
 	^ fields at: key
 			ifPresent: [ :value |
@@ -90,7 +92,7 @@ ELFormState >> at: key collect: aBlock [
 			ifAbsent: [ #() ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key do: aBlock [
 	fields at: key ifPresent: [ :value |
 		value isArray
@@ -98,27 +100,27 @@ ELFormState >> at: key do: aBlock [
 			ifFalse: [ aBlock value: value ] ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key ifAbsent: aBlock [
 	^ fields at: key ifAbsent: aBlock
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key ifPresent: aBlock [
 	^ fields at: key ifPresent: aBlock
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key ifPresent: presentBlock ifAbsent: absentBlock [
 	^ fields at: key ifPresent: presentBlock ifAbsent: absentBlock
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key index: indexInteger ifAbsent: aBlock [
 	^ self at: key index: indexInteger ifPresent: [ :value | value ] ifAbsent: aBlock
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key index: indexInteger ifPresent: presentBlock ifAbsent: absentBlock [
 	fields at: key ifPresent: [ :field |
 		(field isArray and: [ field size >= indexInteger ])
@@ -129,7 +131,7 @@ ELFormState >> at: key index: indexInteger ifPresent: presentBlock ifAbsent: abs
 	^ absentBlock value
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key withIndexCollect: aBlock [
 	^ fields at: key
 			ifPresent: [ :value |
@@ -139,7 +141,7 @@ ELFormState >> at: key withIndexCollect: aBlock [
 			ifAbsent: [ #() ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> at: key withIndexDo: aBlock [
 	fields at: key ifPresent: [ :value |
 		value isArray
@@ -147,7 +149,7 @@ ELFormState >> at: key withIndexDo: aBlock [
 			ifFalse: [ aBlock value: value value: 1 ] ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> booleanAt: key [
 	^ fields
 		at: key
@@ -158,7 +160,7 @@ ELFormState >> booleanAt: key [
 		ifAbsent: [ false ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> booleanAt: key includes: valueString [
 	self
 		at: key
@@ -168,17 +170,17 @@ ELFormState >> booleanAt: key includes: valueString [
 	^ false
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> booleanAt: key index: indexInteger [
 	^ self at: key index: indexInteger ifPresent: [ :value | value ~~ false ] ifAbsent: [ false ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> contains: key [
 	^ fields includesKey: key
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ELFormState >> copyWith: aDictionary [
 	| newState |
 	
@@ -190,7 +192,7 @@ ELFormState >> copyWith: aDictionary [
 	^ newState
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> countAt: key [
 	^ fields at: key
 			ifPresent: [ :value |
@@ -200,7 +202,7 @@ ELFormState >> countAt: key [
 			ifAbsent: [ 0 ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> dateAt: key [
 	| space string |
 	space := Character space.
@@ -211,7 +213,7 @@ ELFormState >> dateAt: key [
 		do: [ nil ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> dateAt: key index: anInteger [
 	| space string |
 	space := Character space.
@@ -222,23 +224,23 @@ ELFormState >> dateAt: key index: anInteger [
 		do: [ nil ]
 ]
 
-{ #category : #validating }
+{ #category : 'validating' }
 ELFormState >> ensureValidity [
 	self hasErrors ifTrue: [
 		ELFormIsInvalid signal ]
 ]
 
-{ #category : #'accessing errors' }
+{ #category : 'accessing errors' }
 ELFormState >> errors [
 	^ errors
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFormState >> errors: anObject [
 	errors := anObject
 ]
 
-{ #category : #'accessing errors' }
+{ #category : 'accessing errors' }
 ELFormState >> errorsAt: nameSymbol [
 	| value |
 	
@@ -249,17 +251,17 @@ ELFormState >> errorsAt: nameSymbol [
 			ifFalse: [ Array with: value ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> fields [
 	^ fields
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELFormState >> fields: anObject [
 	fields := anObject
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupOf: aCollection [
 	| group |
 	
@@ -273,7 +275,7 @@ ELFormState >> groupOf: aCollection [
 	^ group
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupsOf: aDictionary [
 	"aDictionary should contain associations in the form #groupName -> #(fieldName1 fieldName2)"
 	| remainingFields groupedFields |
@@ -295,13 +297,13 @@ ELFormState >> groupsOf: aDictionary [
 	^ groupedFields
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupsOf: aDictionary collect: aBlock count: countFieldName [
 	^ (self groupsOf: aDictionary count: countFieldName)
 			collect: aBlock
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupsOf: aDictionary count: countFieldName [
 	"aDictionary should contain associations in the form:
 		#fieldName -> [ :index | get value of fieldName at index from form ]"
@@ -315,29 +317,29 @@ ELFormState >> groupsOf: aDictionary count: countFieldName [
 					asDictionary ]
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupsOf: aDictionary reject: rejectBlock collect: collectBlock count: countFieldName [
 	^ (self groupsOf: aDictionary count: countFieldName)
 			reject: rejectBlock thenCollect: collectBlock
 ]
 
-{ #category : #'accessing field groups' }
+{ #category : 'accessing field groups' }
 ELFormState >> groupsOf: aDictionary reject: aBlock count: countFieldName [
 	^ (self groupsOf: aDictionary count: countFieldName)
 			reject: aBlock
 ]
 
-{ #category : #'accessing errors' }
+{ #category : 'accessing errors' }
 ELFormState >> hasErrors [
 	^ errors notEmpty
 ]
 
-{ #category : #'accessing errors' }
+{ #category : 'accessing errors' }
 ELFormState >> hasErrors: nameSymbol [
 	^ (self errorsAt: nameSymbol) notEmpty
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ELFormState >> initialize [
 	super initialize.
 	
@@ -345,64 +347,64 @@ ELFormState >> initialize [
 	errors := ZnMultiValueDictionary new
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerAt: key [
 	^ self integerAt: key default: 0
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerAt: key default: anInteger [
 	^ (self integerOrNilAt: key) ifNil: [ anInteger ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerAt: key index: indexInteger [
 	^ self integerAt: key index: indexInteger default: 0
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerAt: key index: indexInteger default: anInteger [
 	^ (self integerOrNilAt: key index: indexInteger) ifNil: [ anInteger ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerOrNilAt: key [
 	^ ((self stringAt: key) reject: [ :each | each isSeparator ]) asInteger
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integerOrNilAt: key index: indexInteger [
 	^ (self stringAt: key index: indexInteger) asInteger
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> integersAt: key [
 
 	^ (self at: key ifAbsent: Array new) collect: [ :each | 
 		  each asInteger ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> radiobuttonBooleanOrFalseAt: key [
 	^ self radiobuttonBooleanValues at: (self stringAt: key) ifPresent: [ :value | value = true ] ifAbsent: [ false ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> radiobuttonBooleanOrFalseAt: key index: indexInteger [
 	^ self radiobuttonBooleanValues at: (self stringAt: key index: indexInteger) ifPresent: [ :value | value = true ] ifAbsent: [ false ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> radiobuttonBooleanOrNilAt: key [
 	^ self radiobuttonBooleanValues at: (self stringAt: key) ifAbsent: [ nil ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> radiobuttonBooleanOrNilAt: key index: indexInteger [
 	^ self radiobuttonBooleanValues at: (self stringAt: key index: indexInteger) ifAbsent: [ nil ]
 ]
 
-{ #category : #constants }
+{ #category : 'constants' }
 ELFormState >> radiobuttonBooleanValues [
 	^ {
 			'1' -> true.
@@ -411,12 +413,12 @@ ELFormState >> radiobuttonBooleanValues [
 		} asDictionary
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ELFormState >> shallowCopy [
 	^ self class fromState: self
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> stringAt: key [
 	| value |
 	value := (self at: key ifAbsent: [ '' ]) ifNil: [ '' ].
@@ -425,19 +427,19 @@ ELFormState >> stringAt: key [
 		ifFalse: [ value ]) asString trimmed
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> stringAt: key index: indexInteger [
 	^ ((self at: key index: indexInteger ifAbsent: [ '' ]) ifNil: [ '' ]) asString trimmed
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> stringsAt: key [
 
 	^ (self at: key ifAbsent: Array new) collect: [ :each | 
 		  each asString ]
 ]
 
-{ #category : #'accessing fields' }
+{ #category : 'accessing fields' }
 ELFormState >> timeAt: key [
 	[ ^ ((self stringAt: (key , 'Hours') asSymbol) , ':'
 		, (self stringAt: (key , 'Minutes') asSymbol)) asTime ]
@@ -445,25 +447,25 @@ ELFormState >> timeAt: key [
 		do: [ ^ Time midnight ]
 ]
 
-{ #category : #validating }
+{ #category : 'validating' }
 ELFormState >> validate: fieldName sameAs: otherFieldName message: aString [
 	(self stringAt: fieldName) = (self stringAt: otherFieldName) ifFalse: [
 		self validationError: aString for: fieldName ]
 ]
 
-{ #category : #validating }
+{ #category : 'validating' }
 ELFormState >> validateChecked: fieldName message: aString [
 	(self booleanAt: fieldName) ifFalse: [
 		self validationError: aString for: fieldName ]
 ]
 
-{ #category : #validating }
+{ #category : 'validating' }
 ELFormState >> validateFilled: fieldName message: aString [
 	(self stringAt: fieldName) ifEmpty: [
 		self validationError: aString for: fieldName ]
 ]
 
-{ #category : #validating }
+{ #category : 'validating' }
 ELFormState >> validationError: aString for: key [
 	ELValidationFailed new
 		key: key;

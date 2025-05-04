@@ -1,15 +1,17 @@
 Class {
-	#name : #ELCsrfInvalid,
-	#superclass : #Exception,
+	#name : 'ELCsrfInvalid',
+	#superclass : 'Exception',
 	#instVars : [
 		'string',
 		'object',
 		'reason'
 	],
-	#category : #'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #signalling }
+{ #category : 'signalling' }
 ELCsrfInvalid class >> signalReason: aReason string: aString object: anObject [
 
 	^ self new
@@ -19,7 +21,7 @@ ELCsrfInvalid class >> signalReason: aReason string: aString object: anObject [
 		  signal
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCsrfInvalid >> messageText [
 
 	^ super messageText ifEmpty: [
@@ -27,17 +29,17 @@ ELCsrfInvalid >> messageText [
 		  , object asString ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCsrfInvalid >> object: anObject [ 
 	object := anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCsrfInvalid >> reason: aString [ 
 	reason := aString
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCsrfInvalid >> string: aString [ 
 	string := aString
 ]

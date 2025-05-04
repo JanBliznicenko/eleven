@@ -1,33 +1,35 @@
 Class {
-	#name : #ELRemoveHeader,
-	#superclass : #ELHeaderResponseDecorator,
+	#name : 'ELRemoveHeader',
+	#superclass : 'ELHeaderResponseDecorator',
 	#instVars : [
 		'headerName',
 		'headerNameLowercase'
 	],
-	#category : 'Eleven-HTTP-Messages'
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELRemoveHeader class >> name: aString with: decoratedResponse [
 	^ (self with: decoratedResponse)
 			headerName: aString
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELRemoveHeader >> headerName: aString [
 	headerName := aString.
 	headerNameLowercase := aString asLowercase
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELRemoveHeader >> headersDo: aBlock [
 	decoratedResponse headersDo: [ :each |
 		each name asLowercase ~= headerNameLowercase
 			ifTrue: [ aBlock value: each ] ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELRemoveHeader >> printOn: aStream [
 	super printOn: aStream.
 	

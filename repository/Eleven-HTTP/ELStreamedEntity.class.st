@@ -1,10 +1,12 @@
 Class {
-	#name : #ELStreamedEntity,
-	#superclass : #ELEntity,
-	#category : #'Eleven-HTTP-Messages'
+	#name : 'ELStreamedEntity',
+	#superclass : 'ELEntity',
+	#category : 'Eleven-HTTP-Messages',
+	#package : 'Eleven-HTTP',
+	#tag : 'Messages'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELStreamedEntity class >> string: aString [
 	| utf8Bytes |
 	
@@ -15,7 +17,7 @@ ELStreamedEntity class >> string: aString [
 			size: utf8Bytes size
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELStreamedEntity class >> string: aString with: decoratedResponse [
 	| utf8Bytes |
 	

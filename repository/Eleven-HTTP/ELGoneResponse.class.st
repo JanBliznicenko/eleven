@@ -1,15 +1,17 @@
 Class {
-	#name : #ELGoneResponse,
-	#superclass : #ELStatusResponse,
-	#category : 'Eleven-HTTP-StatusCodes'
+	#name : 'ELGoneResponse',
+	#superclass : 'ELStatusResponse',
+	#category : 'Eleven-HTTP-StatusCodes',
+	#package : 'Eleven-HTTP',
+	#tag : 'StatusCodes'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELGoneResponse >> statusCode [
 	^ 410
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELGoneResponse >> statusMessage [
 	^ 'Gone'
 ]
