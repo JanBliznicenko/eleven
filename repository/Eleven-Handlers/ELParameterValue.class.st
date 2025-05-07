@@ -1,19 +1,20 @@
 Class {
-	#name : #ELParameterValue,
-	#superclass : #ELHandlerDecorator,
+	#name : 'ELParameterValue',
+	#superclass : 'ELHandlerDecorator',
 	#instVars : [
 		'parameter',
 		'value'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELParameterValue >> accept: aVisitor [
 	^ aVisitor visitParameterValue: self
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELParameterValue >> handle: request [
 	request url queryAt: parameter ifPresent: [ :paramValue |
 		value = paramValue ifTrue: [
@@ -23,17 +24,17 @@ ELParameterValue >> handle: request [
 	^ ELResponse none
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELParameterValue >> parameter [
 	^ parameter
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELParameterValue >> parameter: aString [
 	parameter := aString
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELParameterValue >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -45,12 +46,12 @@ ELParameterValue >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELParameterValue >> value [
 	^ value
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELParameterValue >> value: aString [
 	value := aString
 ]

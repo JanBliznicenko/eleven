@@ -1,40 +1,42 @@
 Class {
-	#name : #ELHandlerVisitor,
-	#superclass : #Object,
-	#category : 'Eleven-Handlers-Visitors'
+	#name : 'ELHandlerVisitor',
+	#superclass : 'Object',
+	#category : 'Eleven-Handlers-Visitors',
+	#package : 'Eleven-Handlers',
+	#tag : 'Visitors'
 }
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visit: aHandler [
 	^ aHandler accept: self
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitChain: aChain [
 	^ self visitRequestHandler: aChain
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitHandlerDecorator: aHandlerDecorator [
 	^ self visitRequestHandler: aHandlerDecorator
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitParameterPresence: aParameterValue [
 	^ self visitHandlerDecorator: aParameterValue
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitParameterValue: aParameterValue [
 	^ self visitHandlerDecorator: aParameterValue
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitPathSegment: aPathSegment [
 	^ self visitHandlerDecorator: aPathSegment
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitRequestHandler: aRequestHandler [
 	"Do nothing - to be overridden by subclasses."
 ]

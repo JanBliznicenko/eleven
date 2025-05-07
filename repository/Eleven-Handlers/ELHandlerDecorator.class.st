@@ -1,34 +1,35 @@
 Class {
-	#name : #ELHandlerDecorator,
-	#superclass : #ELRequestHandler,
+	#name : 'ELHandlerDecorator',
+	#superclass : 'ELRequestHandler',
 	#instVars : [
 		'decoratedHandler'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELHandlerDecorator class >> with: aHandler [
 	^ self new
 			decoratedHandler: aHandler
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELHandlerDecorator >> accept: aVisitor [
 	^ aVisitor visitHandlerDecorator: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELHandlerDecorator >> decoratedHandler [
 	^ decoratedHandler
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELHandlerDecorator >> decoratedHandler: aHandler [
 	decoratedHandler := aHandler
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELHandlerDecorator >> handle: request [
 	^ decoratedHandler handle: request
 ]

@@ -1,19 +1,20 @@
 Class {
-	#name : #ELPatternMatcher,
-	#superclass : #ELSegmentMatcher,
+	#name : 'ELPatternMatcher',
+	#superclass : 'ELSegmentMatcher',
 	#instVars : [
 		'parameter'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELPatternMatcher class >> fromString: aString [
 	^ self new
 			parameter: aString allButFirst allButLast
 ]
 
-{ #category : #matching }
+{ #category : 'matching' }
 ELPatternMatcher >> match: aString into: aDictionary [
 	aString ifEmpty: [ ^ false ].
 	
@@ -22,7 +23,7 @@ ELPatternMatcher >> match: aString into: aDictionary [
 	^ true
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELPatternMatcher >> parameter: aString [
 	parameter := aString
 ]

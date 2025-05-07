@@ -1,18 +1,19 @@
 Class {
-	#name : #ELParameterPresence,
-	#superclass : #ELHandlerDecorator,
+	#name : 'ELParameterPresence',
+	#superclass : 'ELHandlerDecorator',
 	#instVars : [
 		'parameter'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELParameterPresence >> accept: aVisitor [
 	^ aVisitor visitParameterPresence: self
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELParameterPresence >> handle: request [
 	request url queryAt: parameter ifPresent: [ :value |
 		^ decoratedHandler handle:
@@ -21,17 +22,17 @@ ELParameterPresence >> handle: request [
 	^ ELResponse none
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELParameterPresence >> parameter [
 	^ parameter
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELParameterPresence >> parameter: aString [
 	parameter := aString
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELParameterPresence >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -41,7 +42,7 @@ ELParameterPresence >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELParameterPresence >> value [
 	^ '{' , parameter , '}'
 ]

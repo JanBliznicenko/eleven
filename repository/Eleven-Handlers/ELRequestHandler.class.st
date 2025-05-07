@@ -1,15 +1,16 @@
 Class {
-	#name : #ELRequestHandler,
-	#superclass : #Object,
-	#category : 'Eleven-Handlers'
+	#name : 'ELRequestHandler',
+	#superclass : 'Object',
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELRequestHandler >> accept: aVisitor [
 	^ aVisitor visitRequestHandler: self
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELRequestHandler >> handle: request [
 	self subclassResponsibility
 ]

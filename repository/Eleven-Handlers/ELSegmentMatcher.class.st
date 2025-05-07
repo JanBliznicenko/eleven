@@ -1,10 +1,11 @@
 Class {
-	#name : #ELSegmentMatcher,
-	#superclass : #Object,
-	#category : 'Eleven-Handlers'
+	#name : 'ELSegmentMatcher',
+	#superclass : 'Object',
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELSegmentMatcher class >> from: aString [
 	^ (aString includes: ${)
 			ifTrue: [
@@ -13,7 +14,7 @@ ELSegmentMatcher class >> from: aString [
 				ELStringMatcher string: aString ]
 ]
 
-{ #category : #matching }
+{ #category : 'matching' }
 ELSegmentMatcher >> match: aString into: aDictionary [
 	self subclassResponsibility
 ]

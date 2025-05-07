@@ -1,6 +1,6 @@
-Extension { #name : #ELFormState }
+Extension { #name : 'ELFormState' }
 
-{ #category : #'*Eleven-Handlers' }
+{ #category : '*Eleven-Handlers' }
 ELFormState >> handleBy: aHandler in: request [
 	[ ^ self handleBy: aHandler in: request errorsInto: self errors ]
 		on: ELFormIsInvalid , ELFormNotHandled
@@ -8,7 +8,7 @@ ELFormState >> handleBy: aHandler in: request [
 			^ aHandler pass: request withFormState: self ]
 ]
 
-{ #category : #'*Eleven-Handlers' }
+{ #category : '*Eleven-Handlers' }
 ELFormState >> handleBy: aHandler in: request errorsInto: multiValueDictionary [
 	[ ^ aHandler handleForm: self in: request ]
 		on: ELValidationFailed
@@ -17,7 +17,7 @@ ELFormState >> handleBy: aHandler in: request errorsInto: multiValueDictionary [
 			failure resume ]
 ]
 
-{ #category : #'*Eleven-Handlers' }
+{ #category : '*Eleven-Handlers' }
 ELFormState >> pass [
 	ELFormNotHandled signal
 ]

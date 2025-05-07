@@ -1,34 +1,36 @@
 Class {
-	#name : #ELCallback,
-	#superclass : #Object,
+	#name : 'ELCallback',
+	#superclass : 'Object',
 	#instVars : [
 		'block'
 	],
-	#category : 'Eleven-Handlers-Callbacks'
+	#category : 'Eleven-Handlers-Callbacks',
+	#package : 'Eleven-Handlers',
+	#tag : 'Callbacks'
 }
 
-{ #category : #constants }
+{ #category : 'constants' }
 ELCallback class >> parameterName [
 	^ #k
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELCallback class >> with: aBlock [
 	^ self new
 			block: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELCallback >> block: anObject [
 	block := anObject
 ]
 
-{ #category : #registering }
+{ #category : 'registering' }
 ELCallback >> registerIn: aSession [
 	^ aSession registerCallback: self
 ]
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 ELCallback >> valueForRequest: request withKey: key [
 	^ block cull: request
 ]

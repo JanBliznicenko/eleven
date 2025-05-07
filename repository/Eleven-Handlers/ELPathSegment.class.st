@@ -1,14 +1,15 @@
 Class {
-	#name : #ELPathSegment,
-	#superclass : #ELHandlerDecorator,
+	#name : 'ELPathSegment',
+	#superclass : 'ELHandlerDecorator',
 	#instVars : [
 		'segment',
 		'matcher'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELPathSegment class >> handle: aString with: decoratedHandler [
 	(aString includes: $/) ifTrue: [
 		^ ELPathPattern handle: aString with: decoratedHandler ].
@@ -17,12 +18,12 @@ ELPathSegment class >> handle: aString with: decoratedHandler [
 			segment: aString
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELPathSegment >> accept: aVisitor [
 	^ aVisitor visitPathSegment: self
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELPathSegment >> handle: request [
 	^ (self matches: request)
 			ifTrue: [
@@ -31,17 +32,17 @@ ELPathSegment >> handle: request [
 				ELResponse none ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELPathSegment >> matcherClass [
 	^ ELStringMatcher
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELPathSegment >> matches: request [
 	^ request hasPathSegments and: [ matcher matches: request firstPathSegment ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELPathSegment >> printOn: aStream [
 	super printOn: aStream.
 	
@@ -51,12 +52,12 @@ ELPathSegment >> printOn: aStream [
 		nextPut: $)
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELPathSegment >> segment [
 	 ^ segment
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELPathSegment >> segment: aString [
 	segment := aString.
 	matcher := self matcherClass string: aString

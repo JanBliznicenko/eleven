@@ -1,18 +1,19 @@
 Class {
-	#name : #ELChain,
-	#superclass : #ELRequestHandler,
+	#name : 'ELChain',
+	#superclass : 'ELRequestHandler',
 	#instVars : [
 		'elements'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler [
 	^ self withAll: (Array with: firstHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler with: secondHandler [
 	^ self withAll:
 			(Array
@@ -20,7 +21,7 @@ ELChain class >> with: firstHandler with: secondHandler [
 				with: secondHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler with: secondHandler with: thirdHandler [
 	^ self withAll:
 			(Array
@@ -29,7 +30,7 @@ ELChain class >> with: firstHandler with: secondHandler with: thirdHandler [
 				with: thirdHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with: fourthHandler [
 	^ self withAll:
 			(Array
@@ -39,7 +40,7 @@ ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with:
 				with: fourthHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with: fourthHandler with: fifthHandler [
 	^ self withAll:
 			(Array
@@ -50,7 +51,7 @@ ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with:
 				with: fifthHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with: fourthHandler with: fifthHandler with: sixthHandler [
 	^ self withAll:
 			(Array
@@ -62,27 +63,27 @@ ELChain class >> with: firstHandler with: secondHandler with: thirdHandler with:
 				with: sixthHandler)
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELChain class >> withAll: aCollection [
 	^ self new elements: aCollection
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELChain >> accept: aVisitor [
 	^ aVisitor visitChain: self
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELChain >> elements [
 	^ elements
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELChain >> elements: aCollection [
 	elements := aCollection
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELChain >> handle: request [
 	elements do: [ :each |
 		(each handle: request)
@@ -92,7 +93,7 @@ ELChain >> handle: request [
 	^ ELResponse none
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELChain >> printOn: aStream [
 	super printOn: aStream.
 	

@@ -1,10 +1,11 @@
 Class {
-	#name : #ELPathSegmentIgnoringCase,
-	#superclass : #ELPathSegment,
-	#category : 'Eleven-Handlers'
+	#name : 'ELPathSegmentIgnoringCase',
+	#superclass : 'ELPathSegment',
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #private }
+{ #category : 'private' }
 ELPathSegmentIgnoringCase >> matcherClass [
 	^ ELCaseInsensitiveStringMatcher
 ]

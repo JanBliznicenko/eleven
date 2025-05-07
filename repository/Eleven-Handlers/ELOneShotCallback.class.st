@@ -1,10 +1,12 @@
 Class {
-	#name : #ELOneShotCallback,
-	#superclass : #ELCallback,
-	#category : 'Eleven-Handlers-Callbacks'
+	#name : 'ELOneShotCallback',
+	#superclass : 'ELCallback',
+	#category : 'Eleven-Handlers-Callbacks',
+	#package : 'Eleven-Handlers',
+	#tag : 'Callbacks'
 }
 
-{ #category : #evaluating }
+{ #category : 'evaluating' }
 ELOneShotCallback >> valueForRequest: request withKey: key [
 	request session removeCallbackAt: key.
 	

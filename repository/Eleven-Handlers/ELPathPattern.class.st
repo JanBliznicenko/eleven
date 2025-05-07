@@ -1,25 +1,26 @@
 Class {
-	#name : #ELPathPattern,
-	#superclass : #ELHandlerDecorator,
+	#name : 'ELPathPattern',
+	#superclass : 'ELHandlerDecorator',
 	#instVars : [
 		'pattern',
 		'patternSegments'
 	],
-	#category : 'Eleven-Handlers'
+	#category : 'Eleven-Handlers',
+	#package : 'Eleven-Handlers'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ELPathPattern class >> handle: aString with: decoratedHandler [
 	^ (self with: decoratedHandler)
 			pattern: aString
 ]
 
-{ #category : #visiting }
+{ #category : 'visiting' }
 ELPathPattern >> accept: aVisitor [
 	^ aVisitor visitPathPattern: self
 ]
 
-{ #category : #'request handling' }
+{ #category : 'request handling' }
 ELPathPattern >> handle: request [
 	| pathSegments attributes |
 	pathSegments := request pathSegments.
@@ -33,13 +34,13 @@ ELPathPattern >> handle: request [
 	^ decoratedHandler handle: ((request withoutFirstPathSegments: patternSegments size) withAttributes: attributes)
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ELPathPattern >> pattern: aString [
 	pattern := aString.
 	patternSegments := ($/ split: aString) collect: [ :each | ELSegmentMatcher from: each ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ELPathPattern >> printOn: aStream [
 	super printOn: aStream.
 	
