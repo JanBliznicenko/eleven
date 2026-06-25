@@ -1,10 +1,11 @@
 Class {
-	#name : #ELManagingMultiThreadedServer,
-	#superclass : #ZnManagingMultiThreadedServer,
-	#category : #'Eleven-Server-Zinc'
+	#name : 'ELManagingMultiThreadedServer',
+	#superclass : 'ZnManagingMultiThreadedServer',
+	#category : 'Eleven-Server-Zinc',
+	#package : 'Eleven-Server-Zinc'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELManagingMultiThreadedServer >> sessionManager [
 	"Return my session manager"
 

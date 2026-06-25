@@ -1,1 +1,1 @@
-Package { #name : #'Eleven-Server-Zinc' }
+Package { #name : 'Eleven-Server-Zinc' }

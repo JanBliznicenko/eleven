@@ -1,6 +1,6 @@
-Extension { #name : #ELStreamedEntity }
+Extension { #name : 'ELStreamedEntity' }
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELStreamedEntity >> znEntityType [
 	^ ZnStreamingEntity
 ]

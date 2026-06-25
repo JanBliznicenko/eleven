@@ -1,6 +1,6 @@
-Extension { #name : #ELResponse }
+Extension { #name : 'ELResponse' }
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELResponse >> asZnResponse [
 	^ ZnResponse new
 		statusLine: (ZnStatusLine code: self statusCode);
@@ -11,7 +11,7 @@ ELResponse >> asZnResponse [
 					[ :entityStream | entityStream asZnEntityWithType: self znContentType ])
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELResponse >> headersAsZnHeaders [
 	| znHeaders |
 	
@@ -23,7 +23,7 @@ ELResponse >> headersAsZnHeaders [
 	^ znHeaders
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELResponse >> znContentType [
 	^ ZnMimeType commonMimeTypes
 		detect: [ :any | self contentType beginsWith: any main , '/' , any sub ]

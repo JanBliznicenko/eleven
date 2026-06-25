@@ -1,6 +1,6 @@
-Extension { #name : #ELEntity }
+Extension { #name : 'ELEntity' }
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELEntity >> asZnEntityWithType: contentType [
 	^ self znEntityType
 		readFrom: stream
@@ -8,7 +8,7 @@ ELEntity >> asZnEntityWithType: contentType [
 		andLength: size
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELEntity >> znEntityType [
 	^ self subclassResponsibility
 ]

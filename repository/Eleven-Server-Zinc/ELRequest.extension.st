@@ -1,6 +1,6 @@
-Extension { #name : #ELRequest }
+Extension { #name : 'ELRequest' }
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> fileUploadsFromZnMultipartFormDataEntity: aZnEntity [
 	| uploads |
 	
@@ -17,7 +17,7 @@ ELRequest class >> fileUploadsFromZnMultipartFormDataEntity: aZnEntity [
 	^ ELFormState normalize: uploads
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> fileUploadsFromZnRequest: aZnRequest [
 	^ ((aZnRequest contentType notNil
 			and: [ (aZnRequest contentType matches: ZnMimeType multiPartFormData)
@@ -26,7 +26,7 @@ ELRequest class >> fileUploadsFromZnRequest: aZnRequest [
 					ifFalse: [ Dictionary new ])
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> formStateFromZnMultipartRequest: aZnRequest [
 	| fields |
 	
@@ -43,7 +43,7 @@ ELRequest class >> formStateFromZnMultipartRequest: aZnRequest [
 	^ ELFormState from: fields
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> formStateFromZnRequest: aZnRequest [
 	"Note that the request might not have a Content-Type header and even if it has one, it might not have an entity."
 	aZnRequest contentType ifNil: [
@@ -62,7 +62,7 @@ ELRequest class >> formStateFromZnRequest: aZnRequest [
 	^ ELFormState from: Dictionary new
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> fromZnRequest: aZnRequest [
 	^ self new
 		originalRequest: aZnRequest;
@@ -75,7 +75,7 @@ ELRequest class >> fromZnRequest: aZnRequest [
 		fileUploads: (self fileUploadsFromZnRequest: aZnRequest)
 ]
 
-{ #category : #'*Eleven-Server-Zinc' }
+{ #category : '*Eleven-Server-Zinc' }
 ELRequest class >> headersFromZnRequest: aZnRequest [
 	^ Array
 		streamContents: [ :headerStream | 

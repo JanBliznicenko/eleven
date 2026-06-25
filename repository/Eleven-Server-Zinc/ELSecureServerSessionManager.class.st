@@ -1,10 +1,11 @@
 Class {
-	#name : #ELSecureServerSessionManager,
-	#superclass : #ZnServerSessionManager,
-	#category : #'Eleven-Server-Zinc'
+	#name : 'ELSecureServerSessionManager',
+	#superclass : 'ZnServerSessionManager',
+	#category : 'Eleven-Server-Zinc',
+	#package : 'Eleven-Server-Zinc'
 }
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ELSecureServerSessionManager >> setSession: session in: response [
 	"Bind session in response"
 
