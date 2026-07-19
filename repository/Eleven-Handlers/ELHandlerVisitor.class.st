@@ -32,6 +32,11 @@ ELHandlerVisitor >> visitParameterValue: aParameterValue [
 ]
 
 { #category : 'visiting' }
+ELHandlerVisitor >> visitPathPattern: aPathPattern [
+	^ self visitHandlerDecorator: aPathPattern
+]
+
+{ #category : 'visiting' }
 ELHandlerVisitor >> visitPathSegment: aPathSegment [
 	^ self visitHandlerDecorator: aPathSegment
 ]

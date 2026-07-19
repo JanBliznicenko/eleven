@@ -35,6 +35,12 @@ ELPathPattern >> handle: request [
 ]
 
 { #category : 'private' }
+ELPathPattern >> pattern [
+
+	^ pattern
+]
+
+{ #category : 'private' }
 ELPathPattern >> pattern: aString [
 	pattern := aString.
 	patternSegments := ($/ split: aString) collect: [ :each | ELSegmentMatcher from: each ]
